@@ -45,10 +45,9 @@ class StackTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * testPrint
 	 *
-	 * Tests a push
-	 * @depends testPush
+	 * Tests printing the stack as JSON 
 	 */
-	public function testPrint(Stack $stack) {
+	public function testPrint() {
 		$this->expectOutputString('[1,2,3]');
 		$this->stack->outputJSON();
 	}
