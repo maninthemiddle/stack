@@ -25,10 +25,10 @@ class StackTest extends PHPUnit_Framework_TestCase {
         
 		$this->stack->push(4);
 		$stack = $this->stack->get();
-        $this->assertEquals(4, $stack[count($stack)-1]);
-        $this->assertEquals(4, count($stack));
-		
-        return $this->stack;
+		$this->assertEquals(4, $stack[count($stack)-1]);
+		$this->assertEquals(4, count($stack));
+
+		return $this->stack;
     }
  
 /**
@@ -75,7 +75,7 @@ class StackTest extends PHPUnit_Framework_TestCase {
 	public function provider() {
         return array(
         	array(
-        		new Stack()
+				new Stack()
 			)
 		);
     }	
