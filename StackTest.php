@@ -1,4 +1,5 @@
 <?php
+require_once ('Api.php');
 require_once ('Stack.php');
 /**
  * class StackTest
@@ -27,6 +28,24 @@ class StackTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(4, $stack[count($stack) - 1]);
 		$this->assertEquals(4, count($stack));
 		return $this->stack;
+	}
+
+
+	/**
+	 * testPushFromApi
+	 *
+	 * Test a push from an API
+	 */
+	public function testPushFromApi() {
+        $stub = $this->getMock('Api');
+        $stub->expects($this->any())
+             ->method('getValue')
+             ->will($this->returnValue(4));
+			 
+		$this->stack->pushFromApi($stub);
+		$stack = $this->stack->get();
+		$this->assertEquals(4, $stack[count($stack) - 1]);
+		$this->assertEquals(4, count($stack));
 	}
 
 	/**

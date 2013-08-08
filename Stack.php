@@ -46,6 +46,17 @@ class Stack {
 	}
 
 	/**
+	 * pushFromApi
+	 *
+	 * Pushes an integer to the stack
+	 * @param Api $api An api
+	 * @return array
+	 */
+	public function pushFromApi(Api $api) {
+		return array_push($this->stack, $api->getValue());
+	}	
+
+	/**
 	 * pop
 	 *
 	 * Pops an integer from the stack
