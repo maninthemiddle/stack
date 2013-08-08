@@ -26,7 +26,6 @@ class StackTest extends PHPUnit_Framework_TestCase {
 		$stack = $this->stack->get();
 		$this->assertEquals(4, $stack[count($stack) - 1]);
 		$this->assertEquals(4, count($stack));
-
 		return $this->stack;
 	}
 
